@@ -39,8 +39,22 @@ switch (userType) {
 }
 
 let autenticationStatus = isAuthenticated ? "Is authenticated" : "is not authenticated" 
+let subscriptionStatues;
+
+switch (userType) {
+    case "Employee" : subscriptionStatues = "Authorized to access"
+    break;
+    case "Enrolled Member" : subscriptionStatues = "Authorised to access and have access to dietician"
+    break;
+    case "subscriber" : subscriptionStatues = "Partial access only"
+    break; 
+    case "Non-subscriber": subscriptionStatues= "need to enroll"
+    break;
+    default : subscriptionStatues = "need to enroll";
+}
 
 console.log(accessLevel);
 console.log(userMessage);
 console.log(userCategory);
 console.log(autenticationStatus);
+console.log(subscriptionStatues)
